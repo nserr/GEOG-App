@@ -12,7 +12,7 @@ const Footer = () => {
       <Container>
         <p>
           &copy; {new Date().getFullYear()},{" "}
-          <a href="https://www.instagram.com/barackobama">Noah Serr</a>
+          <span>{authorName}</span>
         </p>
       </Container>
     </footer>

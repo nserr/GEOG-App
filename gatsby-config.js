@@ -3,9 +3,9 @@ const config = require("./package.json");
 const { title, description, author, repository, homepage } = config;
 
 const siteMetadata = {
-  companyName: title,
-  companyUrl: repository.url,
-  authorName: author.name,
+  companyName: 'CSC 497 Project (working title)',
+  companyUrl: 'https://github.com/nserr',
+  authorName: 'Noah Serr',
   authorUrl: author.url,
   siteUrl: homepage,
   siteDescription: description,
