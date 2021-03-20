@@ -18,6 +18,7 @@
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-source-graphql": "^2.14.0",
     "leaflet": "^1.7.1",
+    "leaflet-geosearch": "^3.2.2",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

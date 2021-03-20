@@ -3,18 +3,20 @@ import { Helmet } from "react-helmet";
 import L from "leaflet";
 import { Marker, useMap } from "react-leaflet";
 
+import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
+import "../../node_modules/leaflet-geosearch/dist/geosearch.css";
+
 import { promiseToFlyTo, getCurrentLocation } from "lib/map";
 
 import Layout from "components/Layout";
 import Container from "components/Container";
 import Map from "components/Map";
-import Snippet from "components/Snippet";
 
-import gatsby_astronaut from "assets/images/gatsby-astronaut.jpg";
+import house_icon from "assets/images/transparent-house-icon.jpg";
 
 const LOCATION = {
-  lat: 38.9072,
-  lng: -77.0369,
+  lat: 48.46363,
+  lng: -123.31154,
 };
 const CENTER = [LOCATION.lat, LOCATION.lng];
 const DEFAULT_ZOOM = 2;
@@ -24,15 +26,15 @@ const timeToZoom = 2000;
 const timeToOpenPopupAfterZoom = 4000;
 const timeToUpdatePopupAfterZoom = timeToOpenPopupAfterZoom + 3000;
 
-const popupContentHello = `<p>Hello 👋</p>`;
-const popupContentGatsby = `
+const popupContentHello = `<p>My Location</p>`;
+const popupContentCurLocation = `
   <div class="popup-gatsby">
     <div class="popup-gatsby-image">
-      <img class="gatsby-astronaut" src=${gatsby_astronaut} />
+      <img class="house-icon" src=${house_icon} />
     </div>
     <div class="popup-gatsby-content">
-      <h1>Gatsby Leaflet Starter</h1>
-      <p>Welcome to your new Gatsby site. Now go build something great!</p>
+      <h1>Current Location</h1>
+      <p>Enter an address in the search bar to view a new location.</p>
     </div>
   </div>
 `;
@@ -44,6 +46,15 @@ const popupContentGatsby = `
 
 const MapEffect = ({ markerRef }) => {
   const map = useMap();
+
+  const provider = new OpenStreetMapProvider();
+  const searchControl = new GeoSearchControl({
+    provider: provider,
+    style: 'bar',
+    searchLabel: "Search for an address..."
+  });
+
+  map.addControl(searchControl);
 
   useEffect(() => {
     if (!markerRef.current || !map) return;
@@ -71,7 +82,7 @@ const MapEffect = ({ markerRef }) => {
 
         setTimeout(() => marker.openPopup(), timeToOpenPopupAfterZoom);
         setTimeout(
-          () => marker.setPopupContent(popupContentGatsby),
+          () => marker.setPopupContent(popupContentCurLocation),
           timeToUpdatePopupAfterZoom
         );
       }, timeToZoom);
@@ -101,17 +112,17 @@ const IndexPage = () => {
         <Marker ref={markerRef} position={CENTER} />
       </Map>
 
-      <Container type="content" className="text-center home-start">
-        <h2>Still Getting Started?</h2>
-        <p>Run the following in your terminal!</p>
-        <Snippet>
-          gatsby new [directory]
-          https://github.com/colbyfayock/gatsby-starter-leaflet
-        </Snippet>
-        <p className="note">
-          Note: Gatsby CLI required globally for the above command
-        </p>
-      </Container>
+      <div className="sameRow">
+        <Container type="content" className="text-center home-start">
+          <h2>Panel 1</h2>
+        </Container>
+        <Container type="content" className="text-center home-start">
+          <h2>Panel 2</h2>
+        </Container>
+        <Container type="content" className="text-center home-start">
+          <h2>Panel 3</h2>
+        </Container>
+      </div>
     </Layout>
   );
 };

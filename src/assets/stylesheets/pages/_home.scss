@@ -41,14 +41,12 @@
 
   }
 
-  .gatsby-astronaut {
+  .house-icon {
 
     overflow: hidden;
     width: 10em;
     height: 10em;
-    background-color: $gatsby-purple;
     border-radius: 100%;
-    border: solid 6px $gatsby-purple;
     margin: 0;
 
     img {
@@ -77,4 +75,8 @@
     margin-bottom: 1.5em;
   }
 
+}
+
+.sameRow {
+  display: flex;
 }
