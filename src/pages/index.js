@@ -58,8 +58,6 @@ const MapEffect = ({ markerRef }) => {
 
   map.addControl(searchControl);
 
-  // new L.Shapefile('geodata/vicbusstopsshapefile.shp');
-
   useEffect(() => {
     if (!markerRef.current || !map) return;
 
@@ -132,7 +130,10 @@ const IndexPage = () => {
           <h2>Panel 2</h2>
         </Container>
         <Container type="content" className="text-center home-start">
-          <h2>Panel 3</h2>
+          <h2>Score</h2>
+          <div className="score-circle"><span className="score">95</span></div>
+          <p>Your input address scored a <span className="score-2">95</span>.</p>
+          <p>This is an ideal location for UVic students!</p>
         </Container>
       </div>
     </Layout>
