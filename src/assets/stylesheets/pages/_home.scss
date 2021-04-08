@@ -1,4 +1,5 @@
 .page-home {
+  background-color: $blue-grey-400;
 
   .map,
   .map-base {
@@ -42,7 +43,6 @@
   }
 
   .house-icon {
-
     overflow: hidden;
     width: 10em;
     height: 10em;
@@ -53,18 +53,44 @@
       width: 100%;
       height: auto;
     }
+  }
 
+  .eye-show {
+    overflow: hidden;
+    width: 1.2em;
+    height: 1.2em;
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .plus-icon {
+    overflow: hidden;
+    width: 2em;
+    height: 2em;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
 }
 
 .home-start {
-
+  width: 32%;
   padding-top: 4em;
   padding-bottom: 4em;
+  border-radius: 5%;
+  background: $blue-grey-900;
+  box-shadow: 5px 5px 20px -2px #000000;
+  
 
   h2 {
     margin-top: 0;
+    color: white;
   }
 
   p {
@@ -74,9 +100,21 @@
   pre {
     margin-bottom: 1.5em;
   }
+  
+  list-style: url('../images/draggable.png');
 
+  li {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    background: $blue-grey-100;
+    padding: 0.6em;
+    margin: 0.5em;
+    border-radius: 5px;
+  }
 }
 
-.sameRow {
+.same-row {
   display: flex;
+  padding: 1em;
 }
