@@ -70,10 +70,14 @@
     overflow: hidden;
     width: 2em;
     height: 2em;
+    border-radius: 50%;
 
     img {
       width: 100%;
       height: auto;
+    }
+    &:hover {
+      box-shadow: 1px 1px 2px $blue-grey-100;
     }
   }
 
@@ -86,7 +90,6 @@
   border-radius: 5%;
   background: $blue-grey-900;
   box-shadow: 5px 5px 20px -2px #000000;
-  
 
   h2 {
     margin-top: 0;
@@ -94,7 +97,9 @@
   }
 
   p {
-    margin-bottom: 1.2em;
+    margin-top: 2em;
+    color: white;
+    font-size: large;
   }
 
   pre {
@@ -111,10 +116,38 @@
     padding: 0.6em;
     margin: 0.5em;
     border-radius: 5px;
+    &:hover {
+      box-shadow: 2px 2px 5px $dark-black;
+      margin-left: 6px;
+    }
   }
 }
 
 .same-row {
   display: flex;
   padding: 1em;
+}
+
+.score-circle {
+  width: 10em;
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid 2px green;
+  margin-left: 11em;
+  &:hover {
+    border: solid 4px lighten(green, 20%);
+  }
+}
+
+.score {
+  color: white;
+  font-size: 5em;
+}
+
+.score-2 {
+  color: green;
+  font-weight: 600;
 }
