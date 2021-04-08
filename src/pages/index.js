@@ -13,6 +13,8 @@ import Container from "components/Container";
 import Map from "components/Map";
 
 import house_icon from "assets/images/transparent-house-icon.jpg";
+import eye_show from "assets/images/eye-show.png";
+import plus_icon from "assets/images/plus-icon.png";
 
 const LOCATION = {
   lat: 48.46363,
@@ -55,6 +57,8 @@ const MapEffect = ({ markerRef }) => {
   });
 
   map.addControl(searchControl);
+
+  // new L.Shapefile('geodata/vicbusstopsshapefile.shp');
 
   useEffect(() => {
     if (!markerRef.current || !map) return;
@@ -112,9 +116,17 @@ const IndexPage = () => {
         <Marker ref={markerRef} position={CENTER} />
       </Map>
 
-      <div className="sameRow">
+      <div className="same-row">
         <Container type="content" className="text-center home-start">
-          <h2>Panel 1</h2>
+          <h2>Layers</h2>
+          <ul>
+            <li>Distance to Campus<img class="eye-show" src={eye_show}></img></li>
+            <li>Bus Stops <img class="eye-show" src={eye_show}></img></li>
+            <li>Bike Lanes <img class="eye-show" src={eye_show}></img></li>
+            <li>Mean Household Income<img class="eye-show" src={eye_show}></img></li>
+            <li>Mean Household Age<img class="eye-show" src={eye_show}></img></li>
+          </ul>
+          <img class="plus-icon" src={plus_icon}></img>
         </Container>
         <Container type="content" className="text-center home-start">
           <h2>Panel 2</h2>
