@@ -127,7 +127,20 @@ const IndexPage = () => {
           <img class="plus-icon" src={plus_icon}></img>
         </Container>
         <Container type="content" className="text-center home-start">
-          <h2>Panel 2</h2>
+          <h2>Input Address</h2>
+          <div className="address-wrap">
+            <span className="address">3964 Ansell Road</span>
+            <span className="address">Saanich</span>
+            <span className="address">V8P 4W4</span>
+          </div>
+          <div className="address-info-wrap">
+            <span className="address-info type-address">Address</span>
+            <span className="address-info type-region">Region</span>
+            <span className="address-info type-postal-code">Postal Code</span>
+          </div>
+          <div className="score-button">
+            Score
+          </div>
         </Container>
         <Container type="content" className="text-center home-start">
           <h2>Score</h2>

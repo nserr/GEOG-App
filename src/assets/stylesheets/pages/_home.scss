@@ -116,6 +116,7 @@
     padding: 0.6em;
     margin: 0.5em;
     border-radius: 5px;
+    cursor: grab;
     &:hover {
       box-shadow: 2px 2px 5px $dark-black;
       margin-left: 6px;
@@ -150,4 +151,55 @@
 .score-2 {
   color: green;
   font-weight: 600;
+}
+
+.address {
+  width: auto;
+  margin: 0.5em;
+  padding: 1em;
+  background: $blue-grey-100;
+  border-radius: 5px;
+}
+
+.address-info {
+  color: $blue-grey-100;
+  font-size: small;
+  margin-left: 1em;
+}
+
+.address-wrap {
+  display: inline-block;
+  margin-top: 3.5em;
+}
+
+.address-info-wrap {
+  display: flex;
+  margin-top: 1.5em;
+}
+
+.type-address {
+  margin-left: 9em;
+}
+
+.type-region {
+  margin-left: 7.5em;
+}
+
+.type-postal-code {
+  margin-left: 4.5em;
+}
+
+.score-button {
+  width: 5em;
+  padding: 0.5em;
+  background: rgba(0, 128, 0, 0.863);
+  color: white;
+  margin-top: 2.5em;
+  margin-left: 5.5em;
+  font-size: xx-large;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background: green;
+  }
 }
